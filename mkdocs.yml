@@ -3,9 +3,11 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - toc.integrate
     - navigation.top
+    - navigation.indexes
+    - navigation.path
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -25,6 +27,9 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: lime
+plugins:
+    - search
+    - mermaid2
 
 extra:
   social:
@@ -45,7 +50,12 @@ markdown_extensions:
       generic: true
   - footnotes
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+        # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
@@ -57,33 +67,11 @@ copyright: |
 
 nav:
 - Inicio: index.md
-- Instalación:
-  - Requisitos del Sistema: instalacion/requisitos.md
-  - Guía de Instalación: instalacion/guia-instalacion.md
-  - Configuración: instalacion/configuracion.md
-- Uso:
-  - Primeros Pasos: uso/primeros-pasos.md
-  - Características Principales:
-    - Gestión de Guardianes: uso/caracteristicas/gestion-guardianes.md
-    - Servicios: uso/caracteristicas/servicios.md
-    - Clientes: uso/caracteristicas/clientes.md
-  - Guía de Usuario: uso/guia-usuario.md
 - Arquitectura:
   - Descripción General: arquitectura/descripcion-general.md
   - Modelos de Datos: arquitectura/modelos-datos.md
+  - Recursos: arquitectura/recursos.md
   - Componentes del Sistema: arquitectura/componentes.md
-- API Reference:
-  - Introducción: api/introduccion.md
-  - Autenticación: api/autenticacion.md
-  - Endpoints: api/endpoints.md
-- Seguridad:
-  - Autenticación y Autorización: seguridad/autenticacion-autorizacion.md
-  - Cumplimiento de Normas: seguridad/cumplimiento-normas.md
-  - Registro y Monitoreo: seguridad/registro-monitoreo.md
-- DevOps y Despliegue:
-  - Entorno de Desarrollo: devops/entorno-desarrollo.md
-  - Despliegue en Producción: devops/despliegue-produccion.md
-  - Mantenimiento: devops/mantenimiento.md
 - Soporte y FAQ:
   - Preguntas Frecuentes: soporte/faq.md
   - Resolución de Problemas: soporte/resolucion-problemas.md
