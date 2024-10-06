@@ -1,0 +1,91 @@
+site_name: Centurion Documentation
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: es
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: teal
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: teal
+      accent: lime
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/amatosolivo
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/alex_sotam
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/alexander-matos-olivo-71870529/
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/amatosolivo"  target="_blank" rel="noopener">Alexander Matos</a>
+
+nav:
+- Inicio: index.md
+- Instalación:
+  - Requisitos del Sistema: instalacion/requisitos.md
+  - Guía de Instalación: instalacion/guia-instalacion.md
+  - Configuración: instalacion/configuracion.md
+- Uso:
+  - Primeros Pasos: uso/primeros-pasos.md
+  - Características Principales:
+    - Gestión de Guardianes: uso/caracteristicas/gestion-guardianes.md
+    - Servicios: uso/caracteristicas/servicios.md
+    - Clientes: uso/caracteristicas/clientes.md
+  - Guía de Usuario: uso/guia-usuario.md
+- Arquitectura:
+  - Descripción General: arquitectura/descripcion-general.md
+  - Modelos de Datos: arquitectura/modelos-datos.md
+  - Componentes del Sistema: arquitectura/componentes.md
+- API Reference:
+  - Introducción: api/introduccion.md
+  - Autenticación: api/autenticacion.md
+  - Endpoints: api/endpoints.md
+- Seguridad:
+  - Autenticación y Autorización: seguridad/autenticacion-autorizacion.md
+  - Cumplimiento de Normas: seguridad/cumplimiento-normas.md
+  - Registro y Monitoreo: seguridad/registro-monitoreo.md
+- DevOps y Despliegue:
+  - Entorno de Desarrollo: devops/entorno-desarrollo.md
+  - Despliegue en Producción: devops/despliegue-produccion.md
+  - Mantenimiento: devops/mantenimiento.md
+- Soporte y FAQ:
+  - Preguntas Frecuentes: soporte/faq.md
+  - Resolución de Problemas: soporte/resolucion-problemas.md
+- Contribución: contribucion.md
+- Historial de Cambios: changelog.md
