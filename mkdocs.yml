@@ -67,6 +67,7 @@ copyright: |
 
 nav:
 - Inicio: index.md
+- Analisis: analisis.md
 - Arquitectura:
   - Descripción General: arquitectura/descripcion-general.md
   - Modelos de Datos: arquitectura/modelos-datos.md

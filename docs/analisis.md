@@ -1,7 +1,5 @@
 # Análisis Detallado del Sistema de Gestión de Seguridad
 
-Borrador / v. 1.0 / Alexander Matos
-
 ## Analisis Principal del sistema
 Las empresas de renta de seguridad privada enfrentan una serie de necesidades y problemas comunes a nivel global, debido a la naturaleza crítica de los servicios que ofrecen y las regulaciones específicas en cada región. Algunos de los desafíos y necesidades más destacados son:
 
@@ -717,7 +715,4 @@ El **problema más doloroso** y que presenta la **mayor oportunidad de automatiz
 
 ### **Conclusión**
 El **mayor dolor** para las empresas de seguridad privada en la República Dominicana es el **control y gestión del personal operativo y la logística del manejo de efectivo**, áreas que son críticas tanto para la eficiencia operativa como para la seguridad. Implementar sistemas de automatización en estas áreas permitiría mejorar el control, reducir errores, optimizar el uso de recursos, y aumentar la seguridad, brindando una ventaja competitiva significativa.
-
-## 10. Menú Principal del Sistema de Gestión de Seguridad
-A continuación, te presento una propuesta de **menú estructurado** para un sistema de gestión integral para empresas de seguridad privada. Este menú está organizado por módulos clave que abarcan las áreas identificadas como críticas para automatización:
 
