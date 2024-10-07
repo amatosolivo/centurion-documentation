@@ -4,6 +4,8 @@
 
 Centurion es un sistema integral de gestión para empresas de seguridad privada, diseñado para optimizar la administración de personal, servicios de vigilancia y relaciones con clientes. El sistema busca mejorar la eficiencia operativa, aumentar la satisfacción del cliente y optimizar la asignación de recursos.
 
+[Landing page del protucto (prototipo)](https://centurionwebsite.vercel.app/)
+
 ### 1.1 Objetivos Principales
 - Automatizar la gestión de guardianes y asignación de servicios
 - Mejorar el seguimiento y control de operaciones de seguridad
