@@ -1,0 +1,2482 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../analisis/">
+      
+      
+        <link rel="next" href="../modelos-datos/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>Descripción General - Centurion Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#arquitectura-del-sistema" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Centurion Documentation" class="md-header__button md-logo" aria-label="Centurion Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Centurion Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Descripción General
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../analisis/" class="md-tabs__link">
+        
+  
+    
+  
+  Analisis
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Arquitectura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../soporte/faq/" class="md-tabs__link">
+          
+  
+    
+  
+  Soporte y FAQ
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribucion/" class="md-tabs__link">
+        
+  
+    
+  
+  Contribución
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+    
+  
+  Historial de Cambios
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Centurion Documentation" class="md-nav__button md-logo" aria-label="Centurion Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Centurion Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analisis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analisis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Arquitectura
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitectura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Descripción General
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Descripción General
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vision-general-de-la-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Visión General de la Arquitectura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Visión General de la Arquitectura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-principal-del-sistema-de-gestion-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menú Principal del Sistema de Gestión de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descripcion-de-los-modulos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción de los Módulos Clave
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-principales-del-sistema-ampliados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulos Principales del Sistema (Ampliados)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulos Principales del Sistema (Ampliados)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gestion-de-guardianes" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Gestión de Guardianes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-gestion-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Gestión de Clientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-cotizaciones-y-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Cotizaciones y Contratos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-programacion-de-servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. Programación de Servicios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-seguimiento-y-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      e. Seguimiento y Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-facturacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      f. Facturación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-aplicacion-movil-para-supervisores" class="md-nav__link">
+    <span class="md-ellipsis">
+      g. Aplicación Móvil para Supervisores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-modulos-adicionales-diferenciadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Módulos Adicionales (Diferenciadores)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Módulos Adicionales (Diferenciadores)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h-inteligencia-artificial-y-analisis-predictivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      h. Inteligencia Artificial y Análisis Predictivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-gestion-de-incidentes-y-respuesta-a-emergencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      i. Gestión de Incidentes y Respuesta a Emergencias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j-portal-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      j. Portal del Cliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-gestion-de-equipamiento-y-tecnologia-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      k. Gestión de Equipamiento y Tecnología de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-arquitectura-del-sistema-detallada" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Arquitectura del Sistema (Detallada)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-de-seguridad-ampliadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones de Seguridad (Ampliadas)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integraciones-expandidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Integraciones (Expandidas)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-reportes-y-analisis-detallados" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Reportes y Análisis (Detallados)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-elementos-diferenciadores-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Elementos Diferenciadores Adicionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perspectiva-2-2da-ia-respuestas-de-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspectiva 2 (2da IA) - Respuestas de ChatGPT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perspectiva 2 (2da IA) - Respuestas de ChatGPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-modulo-de-gestion-de-clientes-y-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Módulo de Gestión de Clientes y Contratos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modulo-de-gestion-de-personal" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Módulo de Gestión de Personal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modulo-de-seguimiento-de-servicios-y-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Módulo de Seguimiento de Servicios y Supervisión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modulo-de-gestion-de-eventos-y-proteccion-personal" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Módulo de Gestión de Eventos y Protección Personal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-modulo-de-reportes-y-analisis" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Módulo de Reportes y Análisis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-modulo-de-seguridad-y-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Módulo de Seguridad y Autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-modulo-de-soporte-y-atencion-al-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Módulo de Soporte y Atención al Cliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-modulo-de-integracion-con-sistemas-externos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Módulo de Integración con Sistemas Externos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-gestion-de-guardianes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Gestión de Guardianes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Gestión de Guardianes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gestion-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Gestión de Clientes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Gestión de Clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-programacion-de-servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Programación de Servicios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Programación de Servicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-seguimiento-y-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seguimiento y Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seguimiento y Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-facturacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Facturación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Facturación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aplicacion-movil-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Aplicación Móvil Básica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Aplicación Móvil Básica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-de-trabajo-basico-del-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flujo de Trabajo Básico del MVP:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-para-el-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones para el MVP:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modelos-datos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modelos de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../componentes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Componentes del Sistema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Soporte y FAQ
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Soporte y FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preguntas Frecuentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../soporte/resolucion-problemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resolución de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribucion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribución
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Historial de Cambios
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vision-general-de-la-arquitectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Visión General de la Arquitectura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Visión General de la Arquitectura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-principal-del-sistema-de-gestion-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Menú Principal del Sistema de Gestión de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descripcion-de-los-modulos-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descripción de los Módulos Clave
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos-principales-del-sistema-ampliados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Módulos Principales del Sistema (Ampliados)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Módulos Principales del Sistema (Ampliados)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-gestion-de-guardianes" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Gestión de Guardianes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-gestion-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Gestión de Clientes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-cotizaciones-y-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      c. Cotizaciones y Contratos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-programacion-de-servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      d. Programación de Servicios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-seguimiento-y-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      e. Seguimiento y Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-facturacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      f. Facturación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-aplicacion-movil-para-supervisores" class="md-nav__link">
+    <span class="md-ellipsis">
+      g. Aplicación Móvil para Supervisores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-modulos-adicionales-diferenciadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Módulos Adicionales (Diferenciadores)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Módulos Adicionales (Diferenciadores)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#h-inteligencia-artificial-y-analisis-predictivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      h. Inteligencia Artificial y Análisis Predictivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-gestion-de-incidentes-y-respuesta-a-emergencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      i. Gestión de Incidentes y Respuesta a Emergencias
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#j-portal-del-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      j. Portal del Cliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-gestion-de-equipamiento-y-tecnologia-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      k. Gestión de Equipamiento y Tecnología de Seguridad
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-arquitectura-del-sistema-detallada" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Arquitectura del Sistema (Detallada)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-de-seguridad-ampliadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones de Seguridad (Ampliadas)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integraciones-expandidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Integraciones (Expandidas)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-reportes-y-analisis-detallados" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Reportes y Análisis (Detallados)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-elementos-diferenciadores-adicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Elementos Diferenciadores Adicionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perspectiva-2-2da-ia-respuestas-de-chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspectiva 2 (2da IA) - Respuestas de ChatGPT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Perspectiva 2 (2da IA) - Respuestas de ChatGPT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-modulo-de-gestion-de-clientes-y-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Módulo de Gestión de Clientes y Contratos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modulo-de-gestion-de-personal" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Módulo de Gestión de Personal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modulo-de-seguimiento-de-servicios-y-supervision" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Módulo de Seguimiento de Servicios y Supervisión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modulo-de-gestion-de-eventos-y-proteccion-personal" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Módulo de Gestión de Eventos y Protección Personal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-modulo-de-reportes-y-analisis" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Módulo de Reportes y Análisis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-modulo-de-seguridad-y-autenticacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Módulo de Seguridad y Autenticación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-modulo-de-soporte-y-atencion-al-cliente" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Módulo de Soporte y Atención al Cliente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-modulo-de-integracion-con-sistemas-externos" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Módulo de Integración con Sistemas Externos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-gestion-de-guardianes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Gestión de Guardianes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Gestión de Guardianes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-gestion-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Gestión de Clientes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Gestión de Clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-programacion-de-servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Programación de Servicios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Programación de Servicios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-seguimiento-y-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seguimiento y Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seguimiento y Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-facturacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Facturación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Facturación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-aplicacion-movil-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Aplicación Móvil Básica
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Aplicación Móvil Básica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interacciones_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacciones:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-de-trabajo-basico-del-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flujo de Trabajo Básico del MVP:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consideraciones-para-el-mvp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones para el MVP:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="arquitectura-del-sistema">Arquitectura del Sistema</h1>
+<h2 id="1-vision-general-de-la-arquitectura">1. Visión General de la Arquitectura</h2>
+<h3 id="menu-principal-del-sistema-de-gestion-de-seguridad"><strong>Menú Principal del Sistema de Gestión de Seguridad</strong></h3>
+<ol>
+<li><strong>Panel de Control</strong></li>
+<li>Resumen de operaciones en tiempo real</li>
+<li>Indicadores clave de rendimiento (KPI)</li>
+<li>Notificaciones y alertas automáticas</li>
+<li>
+<p>Estado de cumplimiento normativo</p>
+</li>
+<li>
+<p><strong>Gestión de Personal</strong></p>
+</li>
+<li><strong>Asignación de Turnos</strong><ul>
+<li>Asignación automática de turnos por disponibilidad, zona y habilidades</li>
+<li>Vista de calendario y disponibilidad</li>
+<li>Alertas de ausencia o incumplimiento</li>
+</ul>
+</li>
+<li><strong>Control de Asistencia</strong><ul>
+<li>Registro de entradas y salidas por geolocalización</li>
+<li>Control de horas trabajadas</li>
+<li>Integración con dispositivos biométricos o móviles</li>
+</ul>
+</li>
+<li>
+<p><strong>Capacitación y Certificaciones</strong></p>
+<ul>
+<li>Registro de certificaciones de guardias</li>
+<li>Programación y seguimiento de capacitaciones</li>
+<li>Notificaciones de certificaciones próximas a vencer</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoreo en Tiempo Real</strong></p>
+</li>
+<li><strong>Seguimiento de Personal en Campo</strong><ul>
+<li>Geolocalización en tiempo real de guardias en servicio</li>
+<li>Check-ins automáticos y manuales</li>
+<li>Alertas y reportes de incidentes</li>
+</ul>
+</li>
+<li><strong>Monitorización de Vehículos</strong><ul>
+<li>Rastreo GPS de vehículos blindados y patrullas</li>
+<li>Alertas por desviación de ruta o tiempos inusuales</li>
+<li>Estado del vehículo (combustible, mantenimiento, etc.)</li>
+</ul>
+</li>
+<li>
+<p><strong>Gestión de Incidentes</strong></p>
+<ul>
+<li>Registro y clasificación de incidentes</li>
+<li>Asignación automática de responsables y seguimiento de resolución</li>
+<li>Reporte automático a clientes y gerencia</li>
+</ul>
+</li>
+<li>
+<p><strong>Manejo de Efectivo</strong></p>
+</li>
+<li><strong>Logística de Transporte</strong><ul>
+<li>Programación de rutas de transporte de valores</li>
+<li>Rastreo en tiempo real de unidades</li>
+<li>Registro de recolección y entrega de valores con firma digital</li>
+</ul>
+</li>
+<li><strong>Control de Inventario de Valores</strong><ul>
+<li>Registro de movimientos de efectivo (retiros, depósitos)</li>
+<li>Almacenamiento temporal de valores</li>
+<li>Historial de movimientos de cada cliente</li>
+</ul>
+</li>
+<li>
+<p><strong>Informes y Auditoría de Movimientos</strong></p>
+<ul>
+<li>Informes detallados por cliente, valor y ruta</li>
+<li>Sistema de auditoría basado en blockchain para transparencia</li>
+<li>Integración con sistemas bancarios y de contabilidad</li>
+</ul>
+</li>
+<li>
+<p><strong>Cumplimiento Normativo</strong></p>
+</li>
+<li><strong>Generación de Informes de Cumplimiento</strong><ul>
+<li>Creación automática de reportes para auditorías internas y externas</li>
+<li>Cumplimiento de normas locales e internacionales (ISO 27001, PCI-DSS)</li>
+<li>Registro de cumplimiento de requisitos de seguridad y certificaciones</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoreo de Normativas</strong></p>
+<ul>
+<li>Sistema de alertas para cambios en normativas y regulaciones</li>
+<li>Registro de inspecciones y auditorías</li>
+</ul>
+</li>
+<li>
+<p><strong>Facturación y Gestión Financiera</strong></p>
+</li>
+<li><strong>Facturación Automatizada</strong><ul>
+<li>Facturación automática por cliente basada en servicios prestados</li>
+<li>Gestión de tarifas variables según contrato</li>
+<li>Integración con sistemas contables externos</li>
+</ul>
+</li>
+<li><strong>Control de Contratos</strong><ul>
+<li>Gestión de contratos de servicios con clientes</li>
+<li>Renovación y modificación automática de términos</li>
+<li>Alertas para contratos próximos a vencer</li>
+</ul>
+</li>
+<li>
+<p><strong>Gestión de Pagos</strong></p>
+<ul>
+<li>Registro de pagos realizados y pendientes</li>
+<li>Integración con pasarelas de pago y sistemas bancarios</li>
+</ul>
+</li>
+<li>
+<p><strong>Informes y Análisis</strong></p>
+</li>
+<li><strong>Informes de Desempeño</strong><ul>
+<li>Rendimiento del personal (horas trabajadas, incidencias)</li>
+<li>Análisis de rutas de transporte de valores</li>
+<li>Reportes financieros y operativos</li>
+</ul>
+</li>
+<li>
+<p><strong>Tablero de Análisis</strong></p>
+<ul>
+<li>Dashboard con análisis predictivo basado en datos históricos</li>
+<li>Gráficos interactivos de productividad y eficiencia</li>
+<li>Comparativas entre periodos y áreas operativas</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuración del Sistema</strong></p>
+</li>
+<li><strong>Usuarios y Roles</strong><ul>
+<li>Gestión de usuarios con control de acceso por roles</li>
+<li>Asignación de permisos específicos por módulo</li>
+<li>Seguimiento de actividad de usuarios</li>
+</ul>
+</li>
+<li><strong>Integraciones</strong><ul>
+<li>Integración con sistemas externos (ERP, CRM, contabilidad)</li>
+<li>Conexiones API para terceros</li>
+</ul>
+</li>
+<li><strong>Seguridad del Sistema</strong><ul>
+<li>Configuración de autenticación multifactor</li>
+<li>Control de acceso basado en roles</li>
+<li>Auditoría de seguridad interna</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="descripcion-de-los-modulos-clave"><strong>Descripción de los Módulos Clave</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Módulo</strong></th>
+<th><strong>Características Específicas</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gestión de Personal</strong></td>
+<td>Asignación automática de turnos, control de asistencia con geolocalización, capacitación y certificaciones, alertas de ausencias y seguimiento de desempeño individual.</td>
+</tr>
+<tr>
+<td><strong>Monitoreo en Tiempo Real</strong></td>
+<td>Seguimiento de guardias y vehículos mediante GPS, alertas de desviaciones, registro y reporte de incidentes en tiempo real, estado de vehículos y rutas seguras.</td>
+</tr>
+<tr>
+<td><strong>Manejo de Efectivo</strong></td>
+<td>Programación de rutas de transporte de valores, rastreo en tiempo real, registro de movimientos de efectivo, auditoría transparente con blockchain y firma digital.</td>
+</tr>
+<tr>
+<td><strong>Cumplimiento Normativo</strong></td>
+<td>Generación automática de informes de cumplimiento, alertas de vencimiento de certificaciones, y monitoreo continuo de normativas locales e internacionales.</td>
+</tr>
+<tr>
+<td><strong>Facturación y Finanzas</strong></td>
+<td>Facturación automática basada en servicios prestados, gestión de contratos y tarifas, alertas de vencimiento de contratos, y registro de pagos integrados con contabilidad.</td>
+</tr>
+<tr>
+<td><strong>Informes y Análisis</strong></td>
+<td>Tablero con KPIs, análisis predictivo basado en datos históricos, reportes de desempeño del personal, y análisis financiero de costos operativos y ganancias.</td>
+</tr>
+<tr>
+<td><strong>Configuración</strong></td>
+<td>Gestión de roles de usuarios, configuración de integraciones con sistemas externos (ERP, contabilidad), control de acceso, auditoría de seguridad y autenticación robusta.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Este sistema cubriría de manera integral las necesidades operativas y de gestión de una empresa de seguridad privada, automatizando los procesos más críticos y mejorando la eficiencia, seguridad y cumplimiento regulatorio.</p>
+<h2 id="modulos-principales-del-sistema-ampliados">Módulos Principales del Sistema (Ampliados)</h2>
+<h3 id="a-gestion-de-guardianes">a. Gestión de Guardianes</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para administrar toda la información relacionada con el personal de seguridad.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Registro completo de guardianes (datos personales, foto, huellas dactilares)</li>
+<li>Gestión de habilidades, certificaciones y capacitaciones</li>
+<li>Control de disponibilidad y horarios (turnos, vacaciones, licencias)</li>
+<li>Historial de servicios prestados y evaluaciones de desempeño</li>
+<li>Gestión de equipamiento asignado (uniformes, radios, armas si aplica)</li>
+<li>Seguimiento médico y pruebas psicológicas periódicas</li>
+</ul>
+<h3 id="b-gestion-de-clientes">b. Gestión de Clientes</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para administrar la información de los clientes y sus necesidades de seguridad.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Registro de clientes (empresas e individuos)</li>
+<li>Gestión de sucursales o locaciones con detalles específicos de seguridad</li>
+<li>Historial de servicios contratados y satisfacción del cliente</li>
+<li>Perfiles de riesgo y requerimientos especiales de seguridad</li>
+<li>Gestión de contactos y personas autorizadas por el cliente</li>
+</ul>
+<h3 id="c-cotizaciones-y-contratos">c. Cotizaciones y Contratos</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para la creación y gestión de ofertas de servicio y contratos.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Generación de cotizaciones basadas en requerimientos del cliente</li>
+<li>Cálculo automático de costos basado en recursos necesarios</li>
+<li>Conversión de cotizaciones a contratos</li>
+<li>Gestión de términos y condiciones, incluyendo cláusulas específicas</li>
+<li>Proceso de aprobación y firma electrónica de contratos</li>
+</ul>
+<h3 id="d-programacion-de-servicios">d. Programación de Servicios</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para la asignación y programación eficiente de los servicios de seguridad.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Asignación inteligente de guardianes basada en habilidades y proximidad</li>
+<li>Gestión de horarios y fechas con vista de calendario</li>
+<li>Manejo de servicios recurrentes y eventuales</li>
+<li>Rotación automática de personal para evitar familiaridad excesiva</li>
+<li>Gestión de reemplazos y cobertura de emergencia</li>
+</ul>
+<h3 id="e-seguimiento-y-control">e. Seguimiento y Control</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para monitorear y asegurar la calidad del servicio prestado.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Registro de entradas y salidas de guardianes con geolocalización</li>
+<li>Seguimiento en tiempo real de la ubicación de los guardianes</li>
+<li>Generación de reportes de cumplimiento y puntualidad</li>
+<li>Alertas de incidencias y sistema de respuesta rápida</li>
+<li>Evaluaciones de calidad del servicio por parte del cliente</li>
+</ul>
+<h3 id="f-facturacion">f. Facturación</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para la gestión financiera de los servicios prestados.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Generación automática de facturas basadas en servicios prestados</li>
+<li>Cálculo de horas extras, bonificaciones y penalizaciones</li>
+<li>Seguimiento de pagos y gestión de cuentas por cobrar</li>
+<li>Integración con sistemas contables</li>
+<li>Reportes financieros y análisis de rentabilidad</li>
+</ul>
+<h3 id="g-aplicacion-movil-para-supervisores">g. Aplicación Móvil para Supervisores</h3>
+<ul>
+<li><strong>Definición</strong>: Aplicación para dispositivos móviles que facilita la supervisión en campo.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Registro de entrada y salida de guardianes con verificación biométrica</li>
+<li>Geolocalización para verificar ubicación y rutas de rondas</li>
+<li>Reporte de incidencias con captura de fotos y videos</li>
+<li>Comunicación en tiempo real con la oficina central</li>
+<li>Acceso a información crítica del servicio y protocolos de emergencia</li>
+</ul>
+<h2 id="2-modulos-adicionales-diferenciadores">2. Módulos Adicionales (Diferenciadores)</h2>
+<h3 id="h-inteligencia-artificial-y-analisis-predictivo">h. Inteligencia Artificial y Análisis Predictivo</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo que utiliza IA para optimizar operaciones y predecir necesidades.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Predicción de demanda de servicios basada en históricos y tendencias</li>
+<li>Optimización de rutas para supervisores y respuesta a emergencias</li>
+<li>Análisis de patrones para detectar anomalías y prevenir incidentes</li>
+<li>Recomendación de guardianes óptimos para cada servicio</li>
+<li>Evaluación automática de riesgos en nuevas locaciones</li>
+</ul>
+<h3 id="i-gestion-de-incidentes-y-respuesta-a-emergencias">i. Gestión de Incidentes y Respuesta a Emergencias</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo especializado en el manejo de situaciones críticas.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Protocolos de respuesta rápida para diferentes tipos de incidentes</li>
+<li>Coordinación con fuerzas de seguridad y servicios de emergencia</li>
+<li>Sistema de notificaciones en cascada para escalamiento de incidentes</li>
+<li>Simulaciones y entrenamientos virtuales para guardianes</li>
+<li>Análisis post-incidente y generación de lecciones aprendidas</li>
+</ul>
+<h3 id="j-portal-del-cliente">j. Portal del Cliente</h3>
+<ul>
+<li><strong>Definición</strong>: Interfaz web y móvil para que los clientes interactúen con el servicio.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Visualización en tiempo real de los guardianes asignados</li>
+<li>Solicitud de cambios o servicios adicionales</li>
+<li>Acceso a reportes de incidentes y métricas de servicio</li>
+<li>Comunicación directa con supervisores y gestión de cuenta</li>
+<li>Evaluación continua del servicio y feedback</li>
+</ul>
+<h3 id="k-gestion-de-equipamiento-y-tecnologia-de-seguridad">k. Gestión de Equipamiento y Tecnología de Seguridad</h3>
+<ul>
+<li><strong>Definición</strong>: Módulo para administrar los recursos tecnológicos de seguridad.</li>
+<li><strong>Funcionalidades detalladas</strong>:</li>
+<li>Inventario y mantenimiento de equipos (cámaras, sensores, etc.)</li>
+<li>Integración con sistemas de vigilancia electrónica</li>
+<li>Gestión de accesos y credenciales para sistemas de control de acceso</li>
+<li>Monitoreo de estado y alertas de mantenimiento preventivo</li>
+<li>Análisis de eficacia de equipos y recomendaciones de mejora</li>
+</ul>
+<h2 id="3-arquitectura-del-sistema-detallada">3. Arquitectura del Sistema (Detallada)</h2>
+<ul>
+<li><strong>Frontend</strong>:</li>
+<li>Aplicación web responsive utilizando React o Angular</li>
+<li>Diseño modular con componentes reutilizables</li>
+<li>Implementación de Progressive Web App (PWA) para acceso offline</li>
+<li>
+<p>Uso de WebSockets para actualizaciones en tiempo real</p>
+</li>
+<li>
+<p><strong>Backend</strong>:</p>
+</li>
+<li>API RESTful utilizando Node.js (Express) o Python (Django/Flask)</li>
+<li>Arquitectura de microservicios para mejor escalabilidad</li>
+<li>Implementación de GraphQL para consultas eficientes y flexibles</li>
+<li>
+<p>Uso de Redis para caché y manejo de sesiones</p>
+</li>
+<li>
+<p><strong>Base de datos</strong>:</p>
+</li>
+<li>PostgreSQL para datos estructurados con soporte para datos geoespaciales</li>
+<li>MongoDB para almacenamiento de logs y datos no estructurados</li>
+<li>
+<p>Implementación de sharding para mejor rendimiento y escalabilidad</p>
+</li>
+<li>
+<p><strong>Aplicación móvil</strong>:</p>
+</li>
+<li>Desarrollo híbrido con React Native o Flutter</li>
+<li>Implementación de funcionalidades offline</li>
+<li>
+<p>Optimización para bajo consumo de batería en tracking continuo</p>
+</li>
+<li>
+<p><strong>Infraestructura</strong>:</p>
+</li>
+<li>Despliegue en la nube (AWS, Google Cloud o Azure)</li>
+<li>Uso de contenedores (Docker) y orquestación (Kubernetes)</li>
+<li>Implementación de CI/CD para actualizaciones continuas y seguras</li>
+</ul>
+<h2 id="consideraciones-de-seguridad-ampliadas">Consideraciones de Seguridad (Ampliadas)</h2>
+<ul>
+<li>Autenticación de dos factores para todos los accesos</li>
+<li>Encriptación de datos sensibles en tránsito y en reposo</li>
+<li>Implementación de OAuth 2.0 y JWT para autenticación y autorización</li>
+<li>Logs de auditoría detallados con almacenamiento seguro</li>
+<li>Escaneo regular de vulnerabilidades y pruebas de penetración</li>
+<li>Cumplimiento con GDPR, CCPA y otras regulaciones de protección de datos</li>
+<li>Aislamiento de datos por cliente (multi-tenancy seguro)</li>
+</ul>
+<h2 id="5-integraciones-expandidas">5. Integraciones (Expandidas)</h2>
+<ul>
+<li>Pasarelas de pago (Stripe, PayPal) para facturación en línea</li>
+<li>Servicios de geolocalización (Google Maps, Mapbox) para la app móvil</li>
+<li>Integración con sistemas de control de acceso de clientes (HID, AMAG)</li>
+<li>APIs de servicios de emergencia para notificaciones automáticas</li>
+<li>Plataformas de e-learning para capacitación continua de guardianes</li>
+<li>Servicios de verificación de antecedentes para el proceso de contratación</li>
+</ul>
+<h2 id="6-reportes-y-analisis-detallados">6. Reportes y Análisis (Detallados)</h2>
+<ul>
+<li>Dashboard interactivo con KPIs principales y personalizable por rol</li>
+<li>Reportes de ocupación de guardianes con análisis de eficiencia</li>
+<li>Análisis de rentabilidad por cliente, tipo de servicio y región</li>
+<li>Predicción de demanda utilizando modelos de machine learning</li>
+<li>Análisis de sentimiento de feedback de clientes</li>
+<li>Visualización de datos geoespaciales para análisis de cobertura y respuesta</li>
+</ul>
+<h2 id="7-elementos-diferenciadores-adicionales">7. Elementos Diferenciadores Adicionales</h2>
+<ul>
+<li><strong>Gamificación para guardianes</strong>: Sistema de puntos y reconocimientos para incentivar el buen desempeño y la formación continua.</li>
+<li><strong>Marketplace de servicios de seguridad</strong>: Plataforma para que los clientes puedan contratar servicios adicionales de proveedores verificados (ej. instalación de cámaras, consultoría en seguridad).</li>
+<li><strong>Integración con drones</strong>: Para vigilancia aérea en grandes extensiones o eventos.</li>
+<li><strong>Realidad Aumentada</strong>: Para entrenamiento de guardianes y visualización de información en tiempo real durante el servicio.</li>
+<li><strong>Blockchain</strong>: Para garantizar la integridad de los registros de incidentes y horas de servicio.</li>
+<li><strong>Asistente virtual</strong>: Chatbot avanzado para atención al cliente y soporte 24/7 para guardianes y clientes.</li>
+</ul>
+<p>Este análisis detallado proporciona una visión completa y avanzada del sistema de gestión de seguridad, incluyendo elementos innovadores que pueden diferenciar significativamente este sistema de los de la competencia.</p>
+<div style="page-break-after: always;"></div>
+
+<h2 id="perspectiva-2-2da-ia-respuestas-de-chatgpt">Perspectiva 2 (2da IA) - Respuestas de ChatGPT</h2>
+<h3 id="1-modulo-de-gestion-de-clientes-y-contratos">1. <strong>Módulo de Gestión de Clientes y Contratos</strong></h3>
+<ul>
+<li><strong>Registro de Clientes</strong>: Permitir que los clientes se registren, gestionen sus perfiles y almacenen información relevante (ubicaciones, sucursales, preferencias de seguridad).</li>
+<li><strong>Cotización</strong>: Los clientes podrán solicitar cotizaciones personalizadas seleccionando las fechas, horarios, cantidad de guardianes y tipo de servicio (vigilancia de inmuebles, protección personal, eventos).</li>
+<li><strong>Contratación y Facturación</strong>: Una vez aceptada la cotización, el sistema generará un contrato digital y facilitará la facturación automática basada en los términos acordados (por horas, días, semanas, etc.).</li>
+<li><strong>Gestión de Sucursales</strong>: El cliente puede seleccionar una o varias sucursales para que los guardianes se desplieguen en ubicaciones específicas.</li>
+</ul>
+<h3 id="2-modulo-de-gestion-de-personal">2. <strong>Módulo de Gestión de Personal</strong></h3>
+<ul>
+<li><strong>Registro de Guardianes</strong>: Gestión del personal de vigilancia, con detalles sobre habilidades específicas, certificaciones, disponibilidad y experiencia.</li>
+<li><strong>Asignación de Tareas</strong>: Asignar a los guardianes según la disponibilidad y las solicitudes del cliente. Este módulo permitirá optimizar la asignación según el perfil del guardián y los requisitos del cliente.</li>
+<li><strong>Control de Horarios y Asistencia</strong>: Los guardianes serán asignados a turnos específicos, y se gestionarán sus entradas y salidas.</li>
+<li><strong>Evaluación del Personal</strong>: Sistema de evaluación interna y feedback por parte de los clientes después de cada servicio, para mejorar la calidad del personal.</li>
+</ul>
+<h3 id="3-modulo-de-seguimiento-de-servicios-y-supervision">3. <strong>Módulo de Seguimiento de Servicios y Supervisión</strong></h3>
+<ul>
+<li><strong>Aplicación Móvil para Supervisores</strong>: Los supervisores utilizarán una app móvil para registrar la entrada y salida de los guardianes en las instalaciones del cliente. Esto se podrá verificar con geolocalización y escaneo de códigos QR o tecnología NFC para confirmar la presencia física en el lugar y la puntualidad.</li>
+<li><strong>Monitoreo en Tiempo Real</strong>: Los clientes podrán seguir en tiempo real el estatus de los servicios (guardianes activos, ubicaciones, etc.). Además, el sistema permitirá que los supervisores registren incidencias o informes de eventos relevantes durante el servicio.</li>
+<li><strong>Ratificación de Tareas</strong>: Los supervisores podrán validar que los guardianes cumplieron sus horas, y el sistema integrará esta validación en los reportes y la facturación final.</li>
+</ul>
+<h3 id="4-modulo-de-gestion-de-eventos-y-proteccion-personal">4. <strong>Módulo de Gestión de Eventos y Protección Personal</strong></h3>
+<ul>
+<li><strong>Servicios Especializados</strong>: Aparte de la vigilancia de instalaciones, los clientes podrán contratar guardianes para protección personal y eventos especiales. El sistema ofrecerá una opción diferenciada para estos servicios, incluyendo la posibilidad de agregar requerimientos específicos (equipos adicionales, habilidades específicas del guardián, etc.).</li>
+<li><strong>Gestión de Eventos</strong>: Crear eventos específicos en el sistema que requieren vigilancia por un tiempo limitado, gestionando las asignaciones y la logística de los guardianes para ese período.</li>
+</ul>
+<h3 id="5-modulo-de-reportes-y-analisis">5. <strong>Módulo de Reportes y Análisis</strong></h3>
+<ul>
+<li><strong>Reportes de Actividad</strong>: Generación automática de reportes sobre la actividad de los guardianes en las instalaciones del cliente. Estos reportes pueden incluir la hora de entrada, salida, incidencias y tareas realizadas.</li>
+<li><strong>Indicadores de Rendimiento</strong>: Análisis de datos sobre el rendimiento de los guardianes, la satisfacción del cliente, el cumplimiento de horarios y la eficiencia del servicio.</li>
+<li><strong>Alertas y Notificaciones</strong>: Configuración de alertas para clientes y supervisores en caso de retrasos, incumplimientos o cualquier incidencia.</li>
+</ul>
+<h3 id="6-modulo-de-seguridad-y-autenticacion">6. <strong>Módulo de Seguridad y Autenticación</strong></h3>
+<ul>
+<li><strong>Gestión de Roles y Permisos</strong>: Se implementará un sistema de roles (cliente, supervisor, administrador, guardián) para garantizar que cada usuario tenga acceso limitado a la funcionalidad que le corresponde.</li>
+<li><strong>Autenticación Multi-Factor</strong>: El acceso al sistema, tanto en la web como en la aplicación móvil, deberá estar protegido con autenticación de dos factores (2FA) para mayor seguridad.</li>
+<li><strong>Monitoreo y Auditoría</strong>: Registro detallado de todas las actividades realizadas en el sistema para cumplir con normativas de seguridad y auditorías internas.</li>
+</ul>
+<h3 id="7-modulo-de-soporte-y-atencion-al-cliente">7. <strong>Módulo de Soporte y Atención al Cliente</strong></h3>
+<ul>
+<li><strong>Gestión de Incidencias</strong>: Los clientes podrán reportar incidencias, tanto técnicas del sistema como de los servicios de vigilancia, y recibir soporte de la empresa de manera ágil.</li>
+<li><strong>Chat en Tiempo Real</strong>: Un sistema de mensajería en tiempo real para que los clientes puedan interactuar con el equipo de soporte y resolver dudas o problemas en el momento.</li>
+</ul>
+<h3 id="8-modulo-de-integracion-con-sistemas-externos">8. <strong>Módulo de Integración con Sistemas Externos</strong></h3>
+<ul>
+<li><strong>Integración con Sistemas de Nómina</strong>: Para gestionar el pago de los guardianes de acuerdo con las horas trabajadas y validadas por el supervisor.</li>
+<li><strong>Integración con Sistemas de Seguridad (CCTV, Alarmas)</strong>: Posibilidad de conectar el sistema con dispositivos de seguridad instalados en las facilidades del cliente para un monitoreo integral.</li>
+</ul>
+<h2 id="1-gestion-de-guardianes">1. Gestión de Guardianes</h2>
+<h3 id="funcionalidades">Funcionalidades:</h3>
+<ul>
+<li>Registro de datos personales (nombre, dirección, contacto, etc.)</li>
+<li>Carga de documentos básicos (identificación, certificaciones)</li>
+<li>Gestión de disponibilidad y turnos</li>
+<li>Registro de habilidades y experiencia</li>
+<li>Historial básico de servicios prestados</li>
+</ul>
+<h3 id="interacciones">Interacciones:</h3>
+<ul>
+<li>Proporciona información de guardianes disponibles a Programación de Servicios</li>
+<li>Recibe actualizaciones de horas trabajadas desde Seguimiento y Control</li>
+</ul>
+<h2 id="2-gestion-de-clientes">2. Gestión de Clientes</h2>
+<h3 id="funcionalidades_1">Funcionalidades:</h3>
+<ul>
+<li>Registro de datos de clientes (empresas e individuos)</li>
+<li>Gestión de ubicaciones de servicio</li>
+<li>Registro de requisitos específicos de seguridad</li>
+<li>Historial básico de servicios contratados</li>
+</ul>
+<h3 id="interacciones_1">Interacciones:</h3>
+<ul>
+<li>Informa a Programación de Servicios sobre nuevas solicitudes</li>
+<li>Proporciona datos de facturación al módulo de Facturación</li>
+</ul>
+<h2 id="3-programacion-de-servicios">3. Programación de Servicios</h2>
+<h3 id="funcionalidades_2">Funcionalidades:</h3>
+<ul>
+<li>Creación y gestión de turnos de trabajo</li>
+<li>Asignación manual de guardianes a servicios</li>
+<li>Visualización de calendario de servicios</li>
+<li>Gestión básica de conflictos de programación</li>
+</ul>
+<h3 id="interacciones_2">Interacciones:</h3>
+<ul>
+<li>Recibe información de guardianes disponibles de Gestión de Guardianes</li>
+<li>Recibe solicitudes de servicio de Gestión de Clientes</li>
+<li>Envía programación a Seguimiento y Control</li>
+</ul>
+<h2 id="4-seguimiento-y-control">4. Seguimiento y Control</h2>
+<h3 id="funcionalidades_3">Funcionalidades:</h3>
+<ul>
+<li>Registro de entrada y salida de guardianes</li>
+<li>Seguimiento de cumplimiento de horarios</li>
+<li>Registro básico de incidencias</li>
+<li>Generación de reportes simples de cumplimiento</li>
+</ul>
+<h3 id="interacciones_3">Interacciones:</h3>
+<ul>
+<li>Recibe datos de programación de Programación de Servicios</li>
+<li>Envía información de horas trabajadas a Facturación</li>
+<li>Recibe actualizaciones de la Aplicación Móvil Básica</li>
+</ul>
+<h2 id="5-facturacion">5. Facturación</h2>
+<h3 id="funcionalidades_4">Funcionalidades:</h3>
+<ul>
+<li>Generación manual de facturas basadas en servicios prestados</li>
+<li>Cálculo básico de horas trabajadas y tarifas</li>
+<li>Registro de pagos recibidos</li>
+<li>Generación de reportes financieros simples</li>
+</ul>
+<h3 id="interacciones_4">Interacciones:</h3>
+<ul>
+<li>Recibe información de servicios prestados de Seguimiento y Control</li>
+<li>Obtiene datos de clientes y tarifas de Gestión de Clientes</li>
+</ul>
+<h2 id="6-aplicacion-movil-basica">6. Aplicación Móvil Básica</h2>
+<h3 id="funcionalidades_5">Funcionalidades:</h3>
+<ul>
+<li>Autenticación de usuarios (guardianes y supervisores)</li>
+<li>Registro de entrada y salida en ubicación de servicio</li>
+<li>Reporte simple de incidencias</li>
+<li>Visualización de próximos turnos asignados</li>
+</ul>
+<h3 id="interacciones_5">Interacciones:</h3>
+<ul>
+<li>Envía datos de entrada/salida y ubicación a Seguimiento y Control</li>
+<li>Recibe información de turnos asignados de Programación de Servicios</li>
+</ul>
+<h2 id="flujo-de-trabajo-basico-del-mvp">Flujo de Trabajo Básico del MVP:</h2>
+<ol>
+<li>Se registran guardianes y clientes en sus respectivos módulos.</li>
+<li>Un cliente solicita un servicio, que se ingresa en Gestión de Clientes.</li>
+<li>Programación de Servicios asigna guardianes disponibles al servicio solicitado.</li>
+<li>Los guardianes usan la Aplicación Móvil para registrar su entrada y salida del servicio.</li>
+<li>Seguimiento y Control verifica el cumplimiento del servicio.</li>
+<li>Facturación genera la factura basada en el servicio prestado.</li>
+</ol>
+<h2 id="consideraciones-para-el-mvp">Consideraciones para el MVP:</h2>
+<ul>
+<li>Enfoque en usabilidad y estabilidad del sistema.</li>
+<li>Implementación de funciones manuales donde sea necesario, priorizando la operatividad sobre la automatización completa.</li>
+<li>Diseño pensando en la escalabilidad futura para facilitar la adición de funcionalidades avanzadas en iteraciones posteriores.</li>
+<li>Recopilación de feedback de usuarios para informar el desarrollo futuro.</li>
+</ul>
+<h1 id="prompt-para-generacion-de-interfaz-de-usuario-sistema-de-gestion-de-seguridad">Prompt para Generación de Interfaz de Usuario: Sistema de Gestión de Seguridad</h1>
+<p>Diseña una interfaz de usuario moderna, flexible y profesional para un sistema de gestión de renta de servicios de seguridad. </p>
+<p>El sistema consta de los siguientes módulos principales: Gestión de Guardianes, Gestión de Clientes, Programación de Servicios, Seguimiento y Control, Facturación, y una Aplicación Móvil Básica. Sigue estas directrices para cada módulo:</p>
+<h2 id="directrices-generales">Directrices Generales:</h2>
+<ol>
+<li>Utiliza un diseño responsivo que se adapte a diferentes tamaños de pantalla (desktop, tablet, móvil).</li>
+<li>Implementa un esquema de colores profesional y cohesivo, preferiblemente utilizando tonos de azul, blanco y gris para transmitir confianza y seguridad.</li>
+<li>Utiliza una tipografía clara y legible, como Roboto o Open Sans.</li>
+<li>Incorpora principios de diseño de Material Design o un sistema de diseño similar.</li>
+<li>Asegúrate de que la interfaz sea accesible, siguiendo las pautas WCAG 2.1.</li>
+<li>Incluye un panel de navegación consistente en todas las páginas.</li>
+<li>Utiliza iconos intuitivos junto con etiquetas de texto para mejorar la navegabilidad.</li>
+<li>Implementa un diseño de dashboard para la página principal de cada módulo.</li>
+</ol>
+<h2 id="para-cada-modulo-disena">Para cada módulo, diseña:</h2>
+<h3 id="1-gestion-de-guardianes_1">1. Gestión de Guardianes:</h3>
+<ul>
+<li>Una página de lista de guardianes con funciones de búsqueda y filtrado (por nombre, codigo, turno, etc).</li>
+<li>Un formulario para añadir/editar información de guardianes.</li>
+<li>Una vista de perfil detallado del guardián en donde se puedan ver: su historial, evaluaciones, capacitaciones, notas, etc.</li>
+<li>Un calendario visual de disponibilidad de guardianes compuesto por varios colores dependiendo del cliente.</li>
+</ul>
+<h3 id="2-gestion-de-clientes_1">2. Gestión de Clientes:</h3>
+<ul>
+<li>Una página de lista de clientes con funciones de búsqueda y filtrado.</li>
+<li>Un formulario para añadir/editar información de clientes.</li>
+<li>Una vista de perfil detallado del cliente.</li>
+<li>Un mapa interactivo mostrando las ubicaciones de los clientes.</li>
+</ul>
+<h3 id="3-programacion-de-servicios_1">3. Programación de Servicios:</h3>
+<ul>
+<li>Un calendario interactivo para la programación de servicios.</li>
+<li>Un formulario para crear/editar servicios.</li>
+<li>Una vista de lista de servicios programados con opciones de filtrado.</li>
+<li>Un panel de asignación de guardianes a servicios (drag and drop).</li>
+</ul>
+<h3 id="4-seguimiento-y-control_1">4. Seguimiento y Control:</h3>
+<ul>
+<li>Un dashboard en tiempo real mostrando el estado de los servicios actuales.</li>
+<li>Un mapa interactivo mostrando la ubicación de los guardianes en servicio.</li>
+<li>Un formulario para registrar incidencias.</li>
+<li>Una página de reportes con gráficos y tablas.</li>
+</ul>
+<h3 id="5-facturacion_1">5. Facturación:</h3>
+<ul>
+<li>Una página de lista de facturas con opciones de filtrado y búsqueda.</li>
+<li>Un formulario para crear/editar facturas.</li>
+<li>Una vista detallada de factura con opción de impresión.</li>
+<li>Un dashboard financiero con gráficos de ingresos y pagos pendientes.</li>
+</ul>
+<h3 id="6-aplicacion-movil-basica_1">6. Aplicación Móvil Básica:</h3>
+<ul>
+<li>Una pantalla de inicio de sesión.</li>
+<li>Una pantalla principal con los próximos turnos del guardián.</li>
+<li>Un botón prominente para registrar entrada/salida.</li>
+<li>Un formulario simple para reportar incidencias.</li>
+</ul>
+<h2 id="consideraciones-adicionales">Consideraciones adicionales:</h2>
+<ul>
+<li>Utiliza tarjetas (cards) para presentar información resumida.</li>
+<li>Implementa modales para acciones rápidas y confirmaciones.</li>
+<li>Usa breadcrumbs para mejorar la navegación.</li>
+<li>Incluye tooltips para explicar funciones complejas.</li>
+<li>Diseña estados vacíos informativos para listas y dashboards.</li>
+<li>Incorpora feedback visual para acciones del usuario (loaders, confirmaciones).</li>
+<li>Asegúrate de que haya suficiente contraste entre el texto y el fondo.</li>
+<li>Utiliza gráficos y visualizaciones de datos donde sea apropiado.</li>
+<li>Diseña teniendo en cuenta posibles expansiones futuras del sistema.</li>
+</ul>
+<p>Para cada módulo, proporciona:
+1. Un wireframe de baja fidelidad mostrando la estructura general.
+2. Un mockup de alta fidelidad con el diseño completo.
+3. Una breve descripción de las decisiones de diseño y cómo contribuyen a la usabilidad y eficiencia del sistema.</p>
+<p>Asegúrate de que el diseño sea cohesivo a través de todos los módulos, manteniendo una experiencia de usuario consistente y profesional.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/amatosolivo"  target="_blank" rel="noopener">Alexander Matos</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/amatosolivo" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://x.com/alex_sotam" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/alexander-matos-olivo-71870529/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.indexes", "navigation.path", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
